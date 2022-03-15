@@ -1,5 +1,5 @@
 # whackamole
-Project 4: Whack-A-Mole
+Project 4: Whack-A-Mole (Diglett)
 
 Simple game of whacking moles.
 
