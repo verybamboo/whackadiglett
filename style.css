@@ -1,0 +1,39 @@
+body{
+  background-image: url("wp2416367.jpeg");
+  background-size: contain;
+}
+
+.dirt {
+  border: black 1px solid;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  background-image: url("molehole.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.startbutton {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+}
+
+.row {
+  display: block;
+  float:left;
+  width:100%;
+}
+
+.diglett {
+  background-image: url("diggif.gif");
+  background-size: contain;
+}
