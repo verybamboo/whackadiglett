@@ -1,10 +1,11 @@
 body{
   background-image: url("wp2416367.jpeg");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .dirt {
-  border: black 1px solid;
+  /* border: black 1px solid; */
   width: 120px;
   height: 120px;
   margin: 0 auto;
@@ -12,9 +13,10 @@ body{
   cursor: pointer;
   display: inline-block;
   float: left;
-  background-image: url("molehole.png");
+  background-image: url("transparent.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .startbutton {
@@ -35,5 +37,35 @@ body{
 
 .diglett {
   background-image: url("diggif.gif");
+  background-size: contain;
+}
+
+.shinyDiglett {
+  background-image: url("shinydiggif.gif");
+  background-size: contain;
+}
+
+.dugtrio {
+  background-image: url("dugtriogif.gif");
+  background-size: contain;
+}
+
+.shinyDugtrio {
+  background-image: url("dugtrioshiny.gif");
+  background-size: contain;
+}
+
+.alolanDiglett {
+  background-image: url("alolandigshinygif.gif");
+  background-size: contain;
+}
+
+.alolanShinyDiglett {
+  background-image: url("alolandigshinygif.gif");
+  background-size: contain;
+}
+
+.alolanShinyDugtrio {
+  background-image: url("alolandugtrioshiny.gif");
   background-size: contain;
 }
