@@ -1,5 +1,5 @@
-let lastRenderTime = 0;
-let DIG_SPEED = 1;
+// let lastRenderTime = 0;
+// let DIG_SPEED = 1;
 
 //Make a 5x5 grid of boxes that will house each diglett, dirt mound
 function makeGrid() {
@@ -18,6 +18,7 @@ makeGrid();
 
 let holes = document.querySelectorAll('.dirt');
 let amtHoles = holes.length;
+let score = 0;
 //console.log(holes);
 //console.log(amtHoles);
 
@@ -32,6 +33,7 @@ let amtHoles = holes.length;
 function setDiglett() {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
+  score = 1;
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -41,25 +43,23 @@ function setDiglett() {
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
   let dig = function () {
-    // var diggity = document.querySelector('.dirt');
-    // diggity.classList.toggle('diglett')
-
-    holes.forEach((e) => {
-      e.classList.remove('diglett');
-    })
+    //puts the diglett at a random spot
     holes[randomSpot].classList.toggle("diglett");
+    //removes the diglett after a specified time
+    setTimeout(() => {
+      holes[randomSpot].classList.remove('diglett');
+    }, setRandomTime(1000, 1500));
 
     //console.log(randomSpot);
   }
-  // let digUnder = function () {
-  //   holes[randomSpot].classList.add('dirt');
-  // }
   //setTimeout(setRandomTime(500, 1000), 1000);
-  setTimeout(dig, setRandomTime(1000, 2000));
+  setTimeout(dig, setRandomTime(2000, 2500));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setDugtrio() {
+  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  score = 3;
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -69,24 +69,23 @@ function setDugtrio() {
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
   let dig = function () {
-    var diggity = document.querySelector('.dirt');
-    diggity.classList.toggle('dugtrio')
-
-    holes.forEach((e) => {
-      e.classList.remove('dugtrio');
-    })
-
-    //let randomSpot = (Math.floor(Math.random() * amtHoles));
-    holes[(Math.floor(Math.random() * amtHoles))].classList.toggle("dugtrio");
+    //generate a different random spot for dugtrio 
+    holes[randomSpot].classList.toggle("dugtrio");
+    //removes the diglett after a specified time
+    setTimeout(() => {
+      holes[randomSpot].classList.remove('dugtrio');
+    }, setRandomTime(900, 1000));
 
     //console.log(randomSpot);
   }
   //setTimeout(setRandomTime(500, 1000), 1000);
-  setTimeout(dig, setRandomTime(1000, 1000));
+  setTimeout(dig, setRandomTime(800, 1000));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setShinyDiglett() {
+  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  score = 5;
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -96,24 +95,23 @@ function setShinyDiglett() {
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
   let dig = function () {
-    var diggity = document.querySelector('.dirt');
-    diggity.classList.toggle('shinyDiglett')
-
-    holes.forEach((e) => {
-      e.classList.remove('shinyDiglett');
-    })
-
-    //let randomSpot = (Math.floor(Math.random() * amtHoles));
-    holes[(Math.floor(Math.random() * amtHoles))].classList.toggle("shinyDiglett");
+    //puts the diglett at a random spot
+    holes[randomSpot].classList.toggle("shinyDiglett");
+    //removes the diglett after a specified time
+    setTimeout(() => {
+      holes[randomSpot].classList.remove('shinyDiglett');
+    }, setRandomTime(900, 1000));
 
     //console.log(randomSpot);
   }
   //setTimeout(setRandomTime(500, 1000), 1000);
-  setTimeout(dig, setRandomTime(500, 1000));
+  setTimeout(dig, setRandomTime(2000, 2500));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setShinyDugtrio() {
+  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  score = 9;
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -123,20 +121,17 @@ function setShinyDugtrio() {
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
   let dig = function () {
-    var diggity = document.querySelector('.dirt');
-    diggity.classList.toggle('shinyDugtrio')
-
-    holes.forEach((e) => {
-      e.classList.remove('shinyDugtrio');
-    })
-
-    //let randomSpot = (Math.floor(Math.random() * amtHoles));
-    holes[(Math.floor(Math.random() * amtHoles))].classList.toggle("shinyDugtrio");
+    //puts the diglett at a random spot
+    holes[randomSpot].classList.toggle("shinyDugtrio");
+    //removes the diglett after a specified time
+    setTimeout(() => {
+      holes[randomSpot].classList.remove('shinyDugtrio');
+    }, setRandomTime(800, 1000));
 
     //console.log(randomSpot);
   }
   //setTimeout(setRandomTime(500, 1000), 1000);
-  setTimeout(dig, setRandomTime(1000, 1000));
+  setTimeout(dig, setRandomTime(2500, 3000));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -220,14 +215,26 @@ function setAlolanShinyDugtrio() {
   setTimeout(dig, setRandomTime(500, 500));
 }
 
+//function startGame() {
+setInterval(setDiglett, 1000);
+setInterval(setDugtrio, 3000);
+setInterval(setShinyDiglett, 5000);
+setInterval(setShinyDugtrio, 10000);
+  // setInterval(setAlolanDiglett, 6000);
+  // setInterval(setAlolanShinyDiglett, 7000);
+  // setInterval(setAlolanShinyDugtrio, 10000);
 
-setInterval(setDiglett, 2000);
-//setInterval(setDugtrio, 3000);
-//setInterval(setShinyDiglett, 5000);
-//setInterval(setShinyDugtrio, 10000);
-//setInterval(setAlolanDiglett, 6000);
-//setInterval(setAlolanShinyDiglett, 7000);
-//setInterval(setAlolanShinyDugtrio, 10000);
+  //whack function that checks for the class of the div being whacked while also changing it back to dirt
+  // function whack() {
+  //   holes.classList.add('dirt');
+  //   score += setDiglett.score
+  //   console.log(score);
+  // }
+  // function whacked() {
+  //   document.querySelector('.diglett').addEventListener('click', whack);
+  // }
+  // whacked();
+//}
 
 //function for controlling the random speed of the diglett
 // function main(currentTime) {
@@ -242,6 +249,3 @@ setInterval(setDiglett, 2000);
 // }
 
 //window.requestAnimationFrame(main);
-
-//on-click event listener for clicking the digletts and adding points to score
-
