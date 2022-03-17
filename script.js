@@ -201,14 +201,16 @@ function setPikachu() {
 }
 
 //clears the intervals so the game can end after a set amount of time
-function clearSets(one, two, three, four, five, six, seven) {
-  clearInterval(one)
-  clearInterval(two)
-  clearInterval(three)
-  clearInterval(four)
-  clearInterval(five)
-  clearInterval(six)
-  clearInterval(seven)
+function clearSets(one, two, three, four, five, six, seven, eight
+) {
+  clearInterval(one);
+  clearInterval(two);
+  clearInterval(three);
+  clearInterval(four);
+  clearInterval(five);
+  clearInterval(six);
+  clearInterval(seven);
+  clearInterval(eight);
 }
 
 //run the game, each interval activates the different functions for putting digletts/dugtrios on the grid, the setInterval sets how often they
@@ -224,7 +226,6 @@ function startGame() {
 
   score = 0;
   scoreDisplay.textContent = ("Score: " + score);
-  countDown();
   let intervalOne = setInterval(setDiglett, setRandomTime(1000, 1500));
   let intervalTwo = setInterval(setDugtrio, setRandomTime(2500, 3000));
   let intervalThree = setInterval(setPikachu, setRandomTime(3500, 4000));
@@ -232,22 +233,18 @@ function startGame() {
   let intervalFive = setInterval(setShinyDugtrio, setRandomTime(5500, 6000));
   let intervalSix = setInterval(setAlolanShinyDiglett, setRandomTime(4500, 5000));
   let intervalSeven = setInterval(setAlolanShinyDugtrio, setRandomTime(14500, 15000));
+  let timerDown = setInterval(countDown, 1000);
   setTimeout(() => {
 
     console.log("time is up")
-    clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven);
+    clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven, timerDown);
   }, 60000);
 }
 
-
+let timeleft = 60;
 function countDown() {
-  var timeleft = 60;
-  if (timeleft != 0) {
-    setInterval(function () {
-      timeleft - 1;
-    }, 1000);
-    timerDisplay.textContent = ("Seconds: " + timeleft);
-  }
+  timeleft--;
+  timerDisplay.textContent = ("Seconds:" + timeleft);
 }
 
 //the whack function tracks the score by parsing the increment value that was added into the specific diglett class as a property
@@ -264,7 +261,7 @@ function whack(element) {
   this.classList.remove('alolanShinyDugtrio');
   this.classList.remove('pikachu');
   scoreDisplay.textContent = ("Score: " + score);
-  console.log(score);
+  //console.log(score);
 }
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then

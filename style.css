@@ -2,11 +2,7 @@
   font-family: pokemon;
   src: url("Pokemon\ Solid.ttf");
 }
-/* *{
-  border: 1px solid red;
-  padding: 0px;
-  margin: 0px;
-} */
+
 body{
   background-image: url("wp2416367.jpeg");
   background-size: cover;
@@ -31,6 +27,8 @@ body{
 }
 
 .score {
+  display: inline-block;
+  text-align: center;
   float: left;
   font-size: 30px;
   color: #f1c406;
@@ -40,12 +38,15 @@ body{
 }
 
 .timer {
+  display: inline-block;
+  text-align: center;
   float: left;
   font-size: 30px;
   color: #f1c406;
   text-shadow: 5px 5px #3166ac;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #3166ac;
+  width: 20%;
 }
 
 .scoresheet {
@@ -59,8 +60,8 @@ body{
 }
 
 .dirt {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   cursor: pointer;
   float: left;
   background-size: contain;
@@ -242,7 +243,7 @@ ul{
   padding: 0;
 }
 
-.points {
+.points, .timer {
   padding-left: -120px;
   display: inline-block;
   text-align: center;
