@@ -20,6 +20,7 @@ makeGrid();
 let holes = document.querySelectorAll('.dirt');
 let digletts = document.querySelectorAll('.digletts');
 let scoreDisplay = document.querySelector('.score');
+let timerDisplay = document.querySelector('.timer');
 let amtHoles = holes.length;
 let score = 0;
 
@@ -223,6 +224,7 @@ function startGame() {
 
   score = 0;
   scoreDisplay.textContent = ("Score: " + score);
+  countDown();
   let intervalOne = setInterval(setDiglett, setRandomTime(1000, 1500));
   let intervalTwo = setInterval(setDugtrio, setRandomTime(2500, 3000));
   let intervalThree = setInterval(setPikachu, setRandomTime(3500, 4000));
@@ -235,11 +237,24 @@ function startGame() {
     console.log("time is up")
     clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven);
   }, 60000);
-
 }
 
-function whack(e) {
-  console.log(e);
+
+function countDown() {
+  var timeleft = 60;
+  if (timeleft != 0) {
+    setInterval(function () {
+      timeleft - 1;
+    }, 1000);
+    timerDisplay.textContent = ("Seconds: " + timeleft);
+  }
+}
+
+//the whack function tracks the score by parsing the increment value that was added into the specific diglett class as a property
+//the increment value is added to score and the current score value is printed onto the screen
+//to prevent multiple clicks of the same diglett, once the click event happens, the class is removed
+function whack(element) {
+  //console.log(element);
   score += parseInt(this.dataset.increment);
   this.classList.remove('diglett');
   this.classList.remove('dugtrio');

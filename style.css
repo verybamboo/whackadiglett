@@ -1,33 +1,64 @@
+@font-face {
+  font-family: pokemon;
+  src: url("Pokemon\ Solid.ttf");
+}
+/* *{
+  border: 1px solid red;
+  padding: 0px;
+  margin: 0px;
+} */
 body{
   background-image: url("wp2416367.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: pokemon;
 }
 
-h1 {
+.grid {
   text-align: center;
-  font-family: 'Press Start 2P';
-  font-size: 30px;
+  /* font-family: 'Press Start 2P'; */
+  font-size: 60px;
+  text-shadow: 7px 7px 7px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
+  color: #f1c406;
 }
 
 .wholeboard{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: center;
 }
 
 .score {
   float: left;
-  font-size: 20px;
+  font-size: 30px;
+  color: #f1c406;
+  text-shadow: 5px 5px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
 }
 
 .timer {
-  float: right;
-  font-size: 20px;
+  float: left;
+  font-size: 30px;
+  color: #f1c406;
+  text-shadow: 5px 5px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
+}
+
+.scoresheet {
+  font-size: 30px;
+  color: #f1c406;
+  text-shadow: 5px 5px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
+  width: 10%;
+  float: left;
 }
 
 .dirt {
-  /* border: black 1px solid; */
   width: 100px;
   height: 100px;
   cursor: pointer;
@@ -47,7 +78,6 @@ h1 {
 .startbutton {
   display: flex;
   justify-content: center;
-
 }
 
 .grid {
@@ -72,7 +102,7 @@ h1 {
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
-  animation: pop-up .3s;
+  animation: pop-up .4s;
 }
 
 .shinyDiglett {
@@ -86,7 +116,7 @@ h1 {
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
-  animation: pop-up .3s;
+  animation: pop-up .4s;
 }
 
 .dugtrio {
@@ -174,12 +204,47 @@ h1 {
 
 @keyframes pop-up{
   0%{
-transform : scale(.5);
-transform-origin: bottom;
+    transform: scale(.5);
+    transform-origin: bottom;
   }
   
   100%{
-transform: scale(1);
-transform-origin: bottom;
+    transform: scale(1);
+    transform-origin: bottom;
   }
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  text-shadow: 2px 2px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
+  color:#f1c406;
+  font-family: pokemon;
+}
+
+.pics {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+
+  padding: 0;
+}
+
+.points {
+  padding-left: -120px;
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
 }

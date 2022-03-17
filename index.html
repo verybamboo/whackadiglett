@@ -13,15 +13,26 @@
 </head>
 
 <body>
-  <h1>Whack-A-Diglett</h1>
   <main>
     <div class="wholeboard">
       <div class="score">Score: 0</div>
-      <div class="grid"></div>
-      <div class="scoresheet">Score Values</div>
-    </div>
-    <div class="startbutton">
-      <button onclick="startGame();">Start Game</button>
+      <div class="timer">Seconds: 60</div>
+      <div class="grid">Whack-A-Diglett
+        <div class="startbutton">
+          <button class="button" onclick="startGame();">Start Game</button>
+        </div>
+      </div>
+      <div class="scoresheet">Score Values
+        <ul>
+          <li class="points"> 1 point<img class="pics" src="diggif.gif"></li>
+          <li class="points"> 3 points<img class="pics" src="dugtriogif.gif"></li>
+          <li class="points"> 2 points<img class="pics" src="shinydiggif.gif"></li>
+          <li class="points"> 6 points<img class="pics" src="dugtrioshiny.gif"></li>
+          <li class="points"> 3 points<img class="pics" src="alolandigshinygif.gif"></li>
+          <li class="points"> 9 points<img class="pics" src="alolandugtrioshiny.gif"></li>
+          <li class="points"> -5 points<img class="pics" src="pikachu.gif"></li>
+        </ul>
+      </div>
     </div>
   </main>
   <script src="script.js"></script>
