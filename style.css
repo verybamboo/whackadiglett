@@ -4,24 +4,52 @@ body{
   background-repeat: no-repeat;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Press Start 2P';
+  font-size: 30px;
+}
+
+.wholeboard{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.scoreboard {
+  float: right;
+  font-size: 20px;
+}
+
+.timer {
+  float: right;
+  font-size: 20px;
+}
+
 .dirt {
   /* border: black 1px solid; */
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto;
   margin-top: 0;
   cursor: pointer;
-  display: inline-block;
   float: left;
-  background-image: url("transparent.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
+  overflow: hidden;
+  position: relative;
+  background-image: url("transparent.png");
+}
+
+.dirt::after {
+  z-index: 1;
 }
 
 .startbutton {
   display: flex;
   justify-content: center;
+
 }
 
 .grid {
@@ -38,34 +66,115 @@ body{
 .diglett {
   background-image: url("diggif.gif");
   background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
 }
 
 .shinyDiglett {
   background-image: url("shinydiggif.gif");
   background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
 }
 
 .dugtrio {
   background-image: url("dugtriogif.gif");
   background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
 }
 
 .shinyDugtrio {
   background-image: url("dugtrioshiny.gif");
   background-size: contain;
-}
-
-.alolanDiglett {
-  background-image: url("alolandigshinygif.gif");
-  background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
 }
 
 .alolanShinyDiglett {
   background-image: url("alolandigshinygif.gif");
   background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
 }
 
 .alolanShinyDugtrio {
   background-image: url("alolandugtrioshiny.gif");
   background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+.pikachu {
+  background-image: url("pikachu.gif");
+  background-size: contain;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 0;
+  cursor: pointer;
+  float: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+.whacked {
+  background-image: url("whacked.png");
+  background-size: contain;
+}
+
+.diglett, .dugtrio, .shinyDiglett, .shinyDugtrio, .alolanShinyDiglett, .alolanShinyDugtrio, .pikachu {
+  /* width: 100%;
+  height: 100%; */
+  transition: all 0.3s ease;
 }
