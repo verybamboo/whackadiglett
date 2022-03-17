@@ -254,5 +254,5 @@ function whack(e) {
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
-digletts.forEach(diglett => diglett.addEventListener('click', whack), { once: true });
+digletts.forEach(diglett => diglett.addEventListener('click', whack));
 
