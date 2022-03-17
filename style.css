@@ -12,12 +12,12 @@ h1 {
 
 .wholeboard{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   text-align: center;
 }
 
-.scoreboard {
-  float: right;
+.score {
+  float: left;
   font-size: 20px;
 }
 

@@ -19,7 +19,7 @@ makeGrid();
 //stating the variables that will hold global values for use/access later
 let holes = document.querySelectorAll('.dirt');
 let digletts = document.querySelectorAll('.digletts');
-let scoreDisplay = document.querySelector('scoreboard');
+let scoreDisplay = document.querySelector('.score');
 let amtHoles = holes.length;
 let score = 0;
 
@@ -72,7 +72,7 @@ function setDugtrio() {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('dugtrio');
-  }, setRandomTime(1500, 2000));
+  }, setRandomTime(800, 1400));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -97,7 +97,7 @@ function setShinyDiglett() {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('shinyDiglett');
-  }, setRandomTime(1000, 2000));
+  }, setRandomTime(800, 1300));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -122,7 +122,7 @@ function setShinyDugtrio() {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('shinyDugtrio');
-  }, setRandomTime(800, 1500));
+  }, setRandomTime(800, 1200));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -147,7 +147,7 @@ function setAlolanShinyDiglett() {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('alolanShinyDiglett');
-  }, setRandomTime(1000, 1500));
+  }, setRandomTime(800, 1000));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -172,7 +172,7 @@ function setAlolanShinyDugtrio() {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('alolanShinyDugtrio');
-  }, setRandomTime(500, 1000));
+  }, setRandomTime(500, 600));
 }
 
 function setPikachu() {
@@ -214,12 +214,15 @@ function clearSets(one, two, three, four, five, six, seven) {
 //populate the grid while a setTimeout within each of the individual set diglett functions decides how long they stay on the grid before burrowing
 //this all runs for a set amount of time before the clearSets function clears all the set intervals thus ending the game
 function startGame() {
+  //set up random timer here as well
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
     //console.log(time);
     return time;
   }
+
   score = 0;
+  scoreDisplay.textContent = ("Score: " + score);
   let intervalOne = setInterval(setDiglett, setRandomTime(1000, 1500));
   let intervalTwo = setInterval(setDugtrio, setRandomTime(2500, 3000));
   let intervalThree = setInterval(setPikachu, setRandomTime(3500, 4000));
@@ -238,11 +241,18 @@ function startGame() {
 function whack(e) {
   console.log(e);
   score += parseInt(this.dataset.increment);
-
+  this.classList.remove('diglett');
+  this.classList.remove('dugtrio');
+  this.classList.remove('shinyDiglett');
+  this.classList.remove('shinyDugtrio');
+  this.classList.remove('alolanShinyDiglett');
+  this.classList.remove('alolanShinyDugtrio');
+  this.classList.remove('pikachu');
+  scoreDisplay.textContent = ("Score: " + score);
   console.log(score);
 }
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
-digletts.forEach(diglett => diglett.addEventListener('click', whack));
+digletts.forEach(diglett => diglett.addEventListener('click', whack), { once: true });
 
