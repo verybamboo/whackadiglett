@@ -251,7 +251,34 @@ function countDown() {
 //the increment value is added to score and the current score value is printed onto the screen
 //to prevent multiple clicks of the same diglett, once the click event happens, the class is removed
 function whack(element) {
-  //console.log(element);
+  if (this.classList.contains('diglett')) {
+    var audioDiglett = new Audio('diglettsound.mp3');
+    audioDiglett.play();
+  }
+  if (this.classList.contains('dugtrio')) {
+    var audioDiglett = new Audio('dugtriosound.mp3');
+    audioDiglett.play();
+  }
+  if (this.classList.contains('pikachu')) {
+    var audioDiglett = new Audio('pikachufainting.wav');
+    audioDiglett.play();
+  }
+  if (this.classList.contains('shinyDugtrio')) {
+    var audioDiglett = new Audio('dugtriosound.mp3');
+    audioDiglett.play();
+  }
+  if (this.classList.contains('alolanShinyDugtrio')) {
+    var audioDiglett = new Audio('dugtriosound.mp3');
+    audioDiglett.play();
+  }
+  if (this.classList.contains('shinyDiglett')) {
+    var audioDiglett = new Audio('diglettsound.mp3');
+    audioDiglett.play();
+  }
+  if (this.classList.contains('alolanShinyDiglett')) {
+    var audioDiglett = new Audio('diglettsound.mp3');
+    audioDiglett.play();
+  }
   score += parseInt(this.dataset.increment);
   this.classList.remove('diglett');
   this.classList.remove('dugtrio');
@@ -264,7 +291,13 @@ function whack(element) {
   //console.log(score);
 }
 
+function miss() {
+  var audioMallet = new Audio('squeaky.mp3');
+  audioMallet.play();
+}
+
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
 digletts.forEach(diglett => diglett.addEventListener('click', whack));
+holes.forEach(hole => hole.addEventListener('click', miss));
 
