@@ -35,14 +35,15 @@ function setDiglett() {
     return time;
   }
 
-  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var scored = 5;
-  $('.digletts').attr('data-increment', scored);
-
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("diglett");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.diglett');
+  element.setAttribute("data-increment", 1);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('diglett');
@@ -63,6 +64,11 @@ function setDugtrio() {
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("dugtrio");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.dugtrio');
+  element.setAttribute("data-increment", 3);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('dugtrio');
@@ -83,6 +89,11 @@ function setShinyDiglett() {
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("shinyDiglett");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.shinyDiglett');
+  element.setAttribute("data-increment", 2);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('shinyDiglett');
@@ -103,6 +114,11 @@ function setShinyDugtrio() {
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("shinyDugtrio");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.shinyDugtrio');
+  element.setAttribute("data-increment", 6);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('shinyDugtrio');
@@ -123,6 +139,11 @@ function setAlolanShinyDiglett() {
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("alolanShinyDiglett");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.alolanShinyDiglett');
+  element.setAttribute("data-increment", 3);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('alolanShinyDiglett');
@@ -143,6 +164,11 @@ function setAlolanShinyDugtrio() {
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("alolanShinyDugtrio");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.alolanShinyDugtrio');
+  element.setAttribute("data-increment", 9);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('alolanShinyDugtrio');
@@ -162,6 +188,11 @@ function setPikachu() {
   //diglett from the class list
   //puts the diglett at a random spot
   digletts[randomSpot].classList.add("pikachu");
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var element = document.querySelector('.pikachu');
+  element.setAttribute("data-increment", -5);
+
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('pikachu');
@@ -205,8 +236,10 @@ function startGame() {
 }
 
 function whack(e) {
-
   console.log(e);
+  score += parseInt(this.dataset.increment);
+
+  console.log(score);
 }
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then
