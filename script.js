@@ -22,9 +22,6 @@ let digletts = document.querySelectorAll('.digletts');
 let scoreDisplay = document.querySelector('scoreboard');
 let amtHoles = holes.length;
 let score = 0;
-//let runGame = false;
-//console.log(holes);
-//console.log(amtHoles);
 
 //combine random timer and toggle class to change dirt into digletts
 function setDiglett() {
@@ -37,6 +34,11 @@ function setDiglett() {
     //console.log(time);
     return time;
   }
+
+  //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
+  var scored = 5;
+  $('.digletts').attr('data-increment', scored);
+
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
   //puts the diglett at a random spot
@@ -203,6 +205,7 @@ function startGame() {
 }
 
 function whack(e) {
+
   console.log(e);
 }
 
