@@ -24,6 +24,7 @@ let timerDisplay = document.querySelector('.timer');
 let amtHoles = holes.length;
 let score = 0;
 
+
 //combine random timer and toggle class to change dirt into digletts
 function setDiglett() {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
@@ -35,6 +36,20 @@ function setDiglett() {
     //console.log(time);
     return time;
   }
+
+  //let lastHole;
+
+  //no duplicates on the same hole
+  // function noDuplicate() {
+  //   let hole = holes[randomSpot];
+  //   if (hole === lastHole) {
+  //     console.log('duplicate hole');
+  //     return noDuplicate();
+  //   }
+  //   lastHole = hole;
+  //   console.log(lastHole);
+  //   return hole;
+  // }
 
   //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
   //diglett from the class list
@@ -55,6 +70,20 @@ function setDiglett() {
 function setDugtrio() {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
+
+  // function noDuplicate() {
+  //   let hole = holes[randomSpot];
+  //   if (hole === lastHole) {
+  //     console.log('duplicate hole');
+  //     return noDuplicate();
+  //   }
+  //   lastHole = hole;
+  //   console.log(lastHole);
+  //   return hole;
+  // }
+
+  // noDuplicate();
+
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -234,17 +263,18 @@ function startGame() {
   let intervalSix = setInterval(setAlolanShinyDiglett, setRandomTime(4500, 5000));
   let intervalSeven = setInterval(setAlolanShinyDugtrio, setRandomTime(14500, 15000));
   let timerDown = setInterval(countDown, 1000);
-  setTimeout(() => {
 
+  let timeleft = 59;
+  function countDown() {
+    timeleft--;
+    timerDisplay.textContent = ("Seconds:" + timeleft);
+  }
+
+
+  setTimeout(() => {
     console.log("time is up")
     clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven, timerDown);
-  }, 60000);
-}
-
-let timeleft = 60;
-function countDown() {
-  timeleft--;
-  timerDisplay.textContent = ("Seconds:" + timeleft);
+  }, 59500);
 }
 
 //the whack function tracks the score by parsing the increment value that was added into the specific diglett class as a property
@@ -280,7 +310,9 @@ function whack(element) {
     audioDiglett.play();
   }
   score += parseInt(this.dataset.increment);
-  this.classList.remove('diglett');
+
+  //this.classList.add('whacked');
+  //this.classList.remove('diglett');
   this.classList.remove('dugtrio');
   this.classList.remove('shinyDiglett');
   this.classList.remove('shinyDugtrio');
