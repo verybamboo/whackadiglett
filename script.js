@@ -21,8 +21,10 @@ let holes = document.querySelectorAll('.dirt');
 let digletts = document.querySelectorAll('.digletts');
 let scoreDisplay = document.querySelector('.score');
 let timerDisplay = document.querySelector('.timer');
+let highscoreDisplay = document.querySelector('.highscore');
 let amtHoles = holes.length;
 let score = 0;
+let highscore = 0;
 
 
 //combine random timer and toggle class to change dirt into digletts
@@ -222,21 +224,24 @@ function startGame() {
   let timerDown = setInterval(countDown, 1000);
 
   let timeleft = 59;
+
+  //display the time left on the screen
   function countDown() {
     timeleft--;
     timerDisplay.textContent = ("Seconds:" + timeleft);
   }
 
+  //runs the game then clears all intervals when timer is up thus ending the game
   setTimeout(() => {
     console.log("time is up")
     clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven, timerDown);
-  }, 59500);
+  }, 60000);
 }
 
 //the whack function tracks the score by parsing the increment value that was added into the specific diglett class as a property
 //the increment value is added to score and the current score value is printed onto the screen
 //to prevent multiple clicks of the same diglett, once the click event happens, the class is removed
-function whack(element) {
+function whack() {
   if (this.classList.contains('diglett')) {
     var audioDiglett = new Audio('diglettsound.mp3');
     audioDiglett.play();
@@ -266,7 +271,6 @@ function whack(element) {
     audioDiglett.play();
   }
   score += parseInt(this.dataset.increment);
-  console.log(element);
   //this.classList.add('whacked');
   this.classList.remove('diglett');
   this.classList.remove('dugtrio');
@@ -276,12 +280,17 @@ function whack(element) {
   this.classList.remove('alolanShinyDugtrio');
   this.classList.remove('pikachu');
   scoreDisplay.textContent = ("Score: " + score);
+  if (score > highscore) {
+    highscore = score;
+    highscoreDisplay.textContent = ("Highscore: " + highscore);
+  }
 }
 
 function mallet() {
   var audioMallet = new Audio('squeaky.mp3');
   audioMallet.play();
 }
+
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
@@ -290,3 +299,4 @@ digletts.forEach(diglett => diglett.addEventListener('click', whack));
 //squeaky mallet just for some laughs
 holes.forEach(hole => hole.addEventListener('click', mallet));
 
+//stores the value of score into highscore and only updates if a new highscore is reached
