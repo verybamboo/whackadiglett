@@ -223,7 +223,7 @@ function startGame() {
   let intervalSeven = setInterval(setAlolanShinyDugtrio, setRandomTime(14500, 15000));
   let timerDown = setInterval(countDown, 1000);
 
-  let timeleft = 59;
+  let timeleft = 60;
 
   //display the time left on the screen
   function countDown() {
@@ -233,7 +233,6 @@ function startGame() {
 
   //runs the game then clears all intervals when timer is up thus ending the game
   setTimeout(() => {
-    console.log("time is up")
     clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven, timerDown);
   }, 60000);
 }
@@ -282,7 +281,7 @@ function whack() {
   scoreDisplay.textContent = ("Score: " + score);
   if (score > highscore) {
     highscore = score;
-    highscoreDisplay.textContent = ("Highscore: " + highscore);
+    highscoreDisplay.textContent = ("High Score: " + highscore);
   }
 }
 
@@ -290,7 +289,6 @@ function mallet() {
   var audioMallet = new Audio('squeaky.mp3');
   audioMallet.play();
 }
-
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
