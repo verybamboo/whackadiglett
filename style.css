@@ -206,7 +206,7 @@ body{
   z-index: 1;
 }
 
-@keyframes pop-up{
+/* @keyframes pop-up{
   0%{
     transform: scale(.5);
     transform-origin: bottom;
@@ -215,6 +215,52 @@ body{
   100%{
     transform: scale(1);
     transform-origin: bottom;
+  }
+} */
+
+@keyframes pop-up {
+  0%{
+    top: 100%;
+  }
+
+  10%{
+    top: 90%
+  }
+
+  20%{
+    top: 80%
+  }
+
+  30%{
+    top: 70%
+  }
+
+  40%{
+    top: 60%
+  }
+
+  50%{
+    top: 50%;
+  }
+
+  60%{
+    top: 40%;
+  }
+
+  70%{
+    top: 30%;
+  }
+
+  80%{
+    top: 20%;
+  }
+
+  90%{
+    top: 10%;
+  }
+
+  100%{
+    top: 0;
   }
 }
 
@@ -252,11 +298,15 @@ ul{
   padding: 0;
 }
 
-.points, .timer {
+.points, .timer, .highscore {
   padding-left: -120px;
   display: inline-block;
   text-align: center;
   font-size: 28px;
+  color: #f1c406;
+  text-shadow: 5px 5px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
 }
 
 .whacked{
