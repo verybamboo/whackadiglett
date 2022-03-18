@@ -26,7 +26,7 @@ let score = 0;
 
 
 //combine random timer and toggle class to change dirt into digletts
-function setDiglett() {
+function setDiglett(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
 
@@ -37,24 +37,8 @@ function setDiglett() {
     return time;
   }
 
-  //let lastHole;
-
-  //no duplicates on the same hole
-  // function noDuplicate() {
-  //   let hole = holes[randomSpot];
-  //   if (hole === lastHole) {
-  //     console.log('duplicate hole');
-  //     return noDuplicate();
-  //   }
-  //   lastHole = hole;
-  //   console.log(lastHole);
-  //   return hole;
-  // }
-
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("diglett");
+  //puts the diglett at a random spot after checking that there aren't any other diglett type classes
+  digletts[randomSpot].classList.add('diglett');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.diglett');
@@ -67,20 +51,9 @@ function setDiglett() {
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
-function setDugtrio() {
+function setDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
-
-  // function noDuplicate() {
-  //   let hole = holes[randomSpot];
-  //   if (hole === lastHole) {
-  //     console.log('duplicate hole');
-  //     return noDuplicate();
-  //   }
-  //   lastHole = hole;
-  //   console.log(lastHole);
-  //   return hole;
-  // }
 
   // noDuplicate();
 
@@ -90,10 +63,8 @@ function setDugtrio() {
     //console.log(time);
     return time;
   }
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("dugtrio");
+
+  digletts[randomSpot].classList.add('dugtrio');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.dugtrio');
@@ -106,7 +77,7 @@ function setDugtrio() {
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
-function setShinyDiglett() {
+function setShinyDiglett(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
   //generate a random amount of time between minimum seconds and maximum seconds.
@@ -115,10 +86,9 @@ function setShinyDiglett() {
     //console.log(time);
     return time;
   }
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("shinyDiglett");
+
+  //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
+  digletts[randomSpot].classList.add('shinyDiglett');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.shinyDiglett');
@@ -131,7 +101,7 @@ function setShinyDiglett() {
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
-function setShinyDugtrio() {
+function setShinyDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
   //generate a random amount of time between minimum seconds and maximum seconds.
@@ -140,10 +110,9 @@ function setShinyDugtrio() {
     //console.log(time);
     return time;
   }
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("shinyDugtrio");
+
+  //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
+  digletts[randomSpot].classList.add('shinyDugtrio');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.shinyDugtrio');
@@ -156,7 +125,7 @@ function setShinyDugtrio() {
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
-function setAlolanShinyDiglett() {
+function setAlolanShinyDiglett(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
   //generate a random amount of time between minimum seconds and maximum seconds.
@@ -165,10 +134,9 @@ function setAlolanShinyDiglett() {
     //console.log(time);
     return time;
   }
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("alolanShinyDiglett");
+
+  //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
+  digletts[randomSpot].classList.add('alolanShinyDiglett');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.alolanShinyDiglett');
@@ -181,7 +149,7 @@ function setAlolanShinyDiglett() {
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
-function setAlolanShinyDugtrio() {
+function setAlolanShinyDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
   //generate a random amount of time between minimum seconds and maximum seconds.
@@ -190,10 +158,9 @@ function setAlolanShinyDugtrio() {
     //console.log(time);
     return time;
   }
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("alolanShinyDugtrio");
+
+  //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
+  digletts[randomSpot].classList.add('alolanShinyDugtrio');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.alolanShinyDugtrio');
@@ -205,7 +172,7 @@ function setAlolanShinyDugtrio() {
   }, setRandomTime(500, 600));
 }
 
-function setPikachu() {
+function setPikachu(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
   //generate a random amount of time between minimum seconds and maximum seconds.
@@ -214,10 +181,9 @@ function setPikachu() {
     //console.log(time);
     return time;
   }
-  //moves the diglett around the grid by toggling the class of the grid from dirt to diglett and when switching back to dirt class, it also removes
-  //diglett from the class list
-  //puts the diglett at a random spot
-  digletts[randomSpot].classList.add("pikachu");
+
+  //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
+  digletts[randomSpot].classList.add('pikachu');
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
   var element = document.querySelector('.pikachu');
@@ -310,9 +276,9 @@ function whack(element) {
     audioDiglett.play();
   }
   score += parseInt(this.dataset.increment);
-
+  console.log(element);
   //this.classList.add('whacked');
-  //this.classList.remove('diglett');
+  this.classList.remove('diglett');
   this.classList.remove('dugtrio');
   this.classList.remove('shinyDiglett');
   this.classList.remove('shinyDugtrio');
@@ -323,7 +289,7 @@ function whack(element) {
   //console.log(score);
 }
 
-function miss() {
+function mallet() {
   var audioMallet = new Audio('squeaky.mp3');
   audioMallet.play();
 }
@@ -331,5 +297,5 @@ function miss() {
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
 digletts.forEach(diglett => diglett.addEventListener('click', whack));
-holes.forEach(hole => hole.addEventListener('click', miss));
+holes.forEach(hole => hole.addEventListener('click', mallet));
 
