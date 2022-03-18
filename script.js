@@ -33,7 +33,6 @@ function setDiglett(element) {
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -55,12 +54,9 @@ function setDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
 
-  // noDuplicate();
-
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -83,7 +79,6 @@ function setShinyDiglett(element) {
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -107,7 +102,6 @@ function setShinyDugtrio(element) {
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -131,7 +125,6 @@ function setAlolanShinyDiglett(element) {
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -155,7 +148,6 @@ function setAlolanShinyDugtrio(element) {
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -172,13 +164,13 @@ function setAlolanShinyDugtrio(element) {
   }, setRandomTime(500, 600));
 }
 
+//pikachus are worth negative point, avoid them
 function setPikachu(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
   let randomSpot = (Math.floor(Math.random() * amtHoles));
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -215,7 +207,6 @@ function startGame() {
   //set up random timer here as well
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-    //console.log(time);
     return time;
   }
 
@@ -235,7 +226,6 @@ function startGame() {
     timeleft--;
     timerDisplay.textContent = ("Seconds:" + timeleft);
   }
-
 
   setTimeout(() => {
     console.log("time is up")
@@ -286,7 +276,6 @@ function whack(element) {
   this.classList.remove('alolanShinyDugtrio');
   this.classList.remove('pikachu');
   scoreDisplay.textContent = ("Score: " + score);
-  //console.log(score);
 }
 
 function mallet() {
@@ -297,5 +286,7 @@ function mallet() {
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
 digletts.forEach(diglett => diglett.addEventListener('click', whack));
+
+//squeaky mallet just for some laughs
 holes.forEach(hole => hole.addEventListener('click', mallet));
 
