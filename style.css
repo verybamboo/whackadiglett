@@ -12,7 +12,6 @@ body{
 
 .grid {
   text-align: center;
-  /* font-family: 'Press Start 2P'; */
   font-size: 60px;
   text-shadow: 7px 7px 7px #3166ac;
   -webkit-text-stroke-width: 3px;
@@ -28,7 +27,7 @@ body{
   cursor: url("AOEHammer.cur"), auto;
 }
 
-.score, .highscore {
+.score, .highscore, .timer {
   display: inline-block;
   text-align: center;
   float: left;
@@ -37,18 +36,6 @@ body{
   text-shadow: 5px 5px #3166ac;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #3166ac;
-}
-
-.timer {
-  display: inline-block;
-  text-align: center;
-  float: left;
-  font-size: 30px;
-  color: #f1c406;
-  text-shadow: 5px 5px #3166ac;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #3166ac;
-  width: 20%;
 }
 
 .scoresheet {
@@ -205,18 +192,6 @@ body{
   background-repeat: no-repeat;
   z-index: 1;
 }
-
-/* @keyframes pop-up{
-  0%{
-    transform: scale(.5);
-    transform-origin: bottom;
-  }
-  
-  100%{
-    transform: scale(1);
-    transform-origin: bottom;
-  }
-} */
 
 @keyframes pop-up {
   0%{
