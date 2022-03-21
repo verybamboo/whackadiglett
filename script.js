@@ -72,7 +72,7 @@ function setDugtrio(element) {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('dugtrio');
-  }, setRandomTime(800, 1400));
+  }, setRandomTime(1000, 1400));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -95,7 +95,7 @@ function setShinyDiglett(element) {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('shinyDiglett');
-  }, setRandomTime(800, 1300));
+  }, setRandomTime(1100, 1300));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -118,7 +118,7 @@ function setShinyDugtrio(element) {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('shinyDugtrio');
-  }, setRandomTime(800, 1200));
+  }, setRandomTime(1000, 1200));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -141,7 +141,7 @@ function setAlolanShinyDiglett(element) {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('alolanShinyDiglett');
-  }, setRandomTime(800, 1000));
+  }, setRandomTime(1000, 1100));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
@@ -164,7 +164,7 @@ function setAlolanShinyDugtrio(element) {
   //removes the diglett after a specified time
   setTimeout(() => {
     digletts[randomSpot].classList.remove('alolanShinyDugtrio');
-  }, setRandomTime(500, 600));
+  }, setRandomTime(700, 800));
 }
 
 //pikachus are worth negative point, avoid them
@@ -237,6 +237,15 @@ function startGame() {
     clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven, timerDown);
   }, 60000);
 }
+
+//disable the startgame function button for the duration of the timer
+function disableButton() {
+  document.querySelector('.button').disabled = true;
+  setTimeout(function () {
+    document.querySelector('.button').disabled = false;
+  }, 60000);
+}
+document.querySelector('.button').addEventListener('click', disableButton);
 
 //the whack function tracks the score by parsing the increment value that was added into the specific diglett class as a property
 //the increment value is added to score and the current score value is printed onto the screen
