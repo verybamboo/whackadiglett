@@ -25,6 +25,7 @@ let highscoreDisplay = document.querySelector('.highscore');
 let amtHoles = holes.length;
 let score = 0;
 let highscore = 0;
+let gamePlay = false;
 
 
 //combine random timer and toggle class to change dirt into digletts
@@ -270,7 +271,6 @@ function whack() {
     audioDiglett.play();
   }
   score += parseInt(this.dataset.increment);
-  //this.classList.add('whacked');
   this.classList.remove('diglett');
   this.classList.remove('dugtrio');
   this.classList.remove('shinyDiglett');
@@ -297,4 +297,3 @@ digletts.forEach(diglett => diglett.addEventListener('click', whack));
 //squeaky mallet just for some laughs
 holes.forEach(hole => hole.addEventListener('click', mallet));
 
-//stores the value of score into highscore and only updates if a new highscore is reached

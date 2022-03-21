@@ -24,7 +24,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  cursor: url("AOEHammer.cur"), auto;
+  cursor: url("picopico.cur"), auto;
 }
 
 .score, .highscore, .timer {
@@ -52,7 +52,7 @@ body{
 .dirt {
   width: 100px;
   height: 100px;
-  cursor: url("mallet.cur"), auto;
+  cursor: url("picopico.cur"), auto;
   float: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -88,7 +88,6 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -102,7 +101,6 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -116,7 +114,6 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -130,7 +127,6 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -144,7 +140,6 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -158,7 +153,6 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -172,17 +166,11 @@ body{
   z-index: 2;
   width: 100px;
   height: 100px;
-  cursor: url("AOEHammer.cur");
   float: left;
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
   animation: pop-up .3s;
-}
-
-.whacked {
-  background-image: url("whacked.png");
-  background-size: contain;
 }
 
 .dirt::after {
@@ -251,7 +239,7 @@ body{
   -webkit-text-stroke-color: #3166ac;
   color:#f1c406;
   font-family: pokemon;
-  cursor: url("AOEHammer.cur"), auto;
+  cursor: url("picopico.cur"), auto;
 }
 
 .pics {
@@ -291,7 +279,7 @@ ul{
 }
 
 .dirt:hover{
-  cursor: url("AOEHammer.cur"), auto;
+  cursor: url("picopico.cur"), auto;
 }
 
 .points {
