@@ -43,7 +43,7 @@ I initially set out to create a simple 1 pop-up, mole game but eventually as I w
 # Unsolved issues
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-1. Pressing the start button will run multiple instances of the game simultaneously.
+1. Pressing the start button will run multiple instances of the game simultaneously. FIXED.
 2. If you "whack" moles too fast, faster than the game can track, the score will return a NaN.
 3. Slight CSS movements that change
 4. I was able to make it so that a mole will not show up in a hole that already had a mole previously but once I started added multiple types of moles, I was unable to make it so that two moles won't show up in the same hole.

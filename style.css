@@ -1,10 +1,10 @@
 @font-face {
   font-family: pokemon;
-  src: url("Pokemon\ Solid.ttf");
+  src: url("img/Pokemon\ Solid.ttf");
 }
 
 body{
-  background-image: url("wp2416367.jpeg");
+  background-image: url("img/wp2416367.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: pokemon;
@@ -24,7 +24,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  cursor: url("picopico.cur"), auto;
+  cursor: url("img/picopico.cur"), auto;
 }
 
 .score, .highscore, .timer {
@@ -52,14 +52,14 @@ body{
 .dirt {
   width: 100px;
   height: 100px;
-  cursor: url("picopico.cur"), auto;
+  cursor: url("img/picopico.cur"), auto;
   float: left;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
   overflow: hidden;
   position: relative;
-  background-image: url("transparent.png");
+  background-image: url("img/transparent.png");
 }
 
 .dirt::after {
@@ -83,7 +83,7 @@ body{
 }
 
 .diglett {
-  background-image: url("diggif.gif");
+  background-image: url("img/diggif.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -96,7 +96,7 @@ body{
 }
 
 .shinyDiglett {
-  background-image: url("shinydiggif.gif");
+  background-image: url("img/shinydiggif.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -109,7 +109,7 @@ body{
 }
 
 .dugtrio {
-  background-image: url("dugtriogif.gif");
+  background-image: url("img/dugtriogif.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -122,7 +122,7 @@ body{
 }
 
 .shinyDugtrio {
-  background-image: url("dugtrioshiny.gif");
+  background-image: url("img/dugtrioshiny.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -135,7 +135,7 @@ body{
 }
 
 .alolanShinyDiglett {
-  background-image: url("alolandigshinygif.gif");
+  background-image: url("img/alolandigshinygif.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -148,7 +148,7 @@ body{
 }
 
 .alolanShinyDugtrio {
-  background-image: url("alolandugtrioshiny.gif");
+  background-image: url("img/alolandugtrioshiny.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -161,7 +161,7 @@ body{
 }
 
 .pikachu {
-  background-image: url("pikachu.gif");
+  background-image: url("img/pikachu.gif");
   background-size: contain;
   z-index: 2;
   width: 100px;
@@ -175,7 +175,7 @@ body{
 
 .dirt::after {
   display: block;
-  background: url(transparent.png);
+  background: url(img/transparent.png);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
@@ -239,7 +239,7 @@ body{
   -webkit-text-stroke-color: #3166ac;
   color:#f1c406;
   font-family: pokemon;
-  cursor: url("picopico.cur"), auto;
+  cursor: url("img/picopico.cur"), auto;
 }
 
 .pics {
@@ -273,13 +273,8 @@ ul{
   -webkit-text-stroke-color: #3166ac;
 }
 
-.whacked{
-  background-image: url("whacked.png");
-  background-size: contain;
-}
-
 .dirt:hover{
-  cursor: url("picopico.cur"), auto;
+  cursor: url("img/picopico.cur"), auto;
 }
 
 .points {

@@ -1,11 +1,11 @@
 //Make a 5x5 grid of boxes, each grid cell is a dirt div and within each dirt div is a diglett type div
 function makeGrid() {
-  for (var i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
     var row = document.createElement('div');
     row.className = "row";
-    for (var j = 0; j < 5; j++) {
-      var dirt = document.createElement('div');
-      var diglettTypes = document.createElement('div');
+    for (let j = 0; j < 5; j++) {
+      let dirt = document.createElement('div');
+      let diglettTypes = document.createElement('div');
       dirt.className = "dirt";
       diglettTypes.className = "digletts"
       row.appendChild(dirt);
