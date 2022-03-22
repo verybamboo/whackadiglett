@@ -56,6 +56,8 @@ I initially set out to create a simple 1 pop-up, mole game but eventually as I w
 1. CSS animations
 2. Custom cursors
 3. Custom Fonts
+4. HTML
+5. Javascript
 
 # Disclaimer
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
