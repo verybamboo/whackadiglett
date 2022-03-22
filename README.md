@@ -3,8 +3,7 @@ Project 4: Whack-A-Mole (Diglett)
 
 # Overview
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-![image]
-(https://user-images.githubusercontent.com/57966235/159417372-296adf49-7403-4a1e-abff-8fee5c02c928.png)
+<img width="1178" alt="screenshotWAD" src="https://user-images.githubusercontent.com/57966235/159417760-b0d83ef7-e795-4a94-bbef-2a9828bc61b4.png">
 
 Simple game of whacking moles(digletts) using javascript, css and html that I've learned thus far.
 This is purely a project for practicing my own skills and not meant to be monetized or sold. 
