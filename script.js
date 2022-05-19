@@ -1,7 +1,7 @@
 //Make a 5x5 grid of boxes, each grid cell is a dirt div and within each dirt div is a diglett type div
 function makeGrid() {
   for (let i = 0; i < 5; i++) {
-    var row = document.createElement('div');
+    let row = document.createElement('div');
     row.className = "row";
     for (let j = 0; j < 5; j++) {
       let dirt = document.createElement('div');
@@ -252,31 +252,31 @@ document.querySelector('.button').addEventListener('click', disableButton);
 //to prevent multiple clicks of the same diglett, once the click event happens, the class is removed
 function whack() {
   if (this.classList.contains('diglett')) {
-    var audioDiglett = new Audio('diglettsound.mp3');
+    var audioDiglett = new Audio('img/diglettsound.mp3');
     audioDiglett.play();
   }
   if (this.classList.contains('dugtrio')) {
-    var audioDiglett = new Audio('dugtriosound.mp3');
+    var audioDiglett = new Audio('img/dugtriosound.mp3');
     audioDiglett.play();
   }
   if (this.classList.contains('pikachu')) {
-    var audioDiglett = new Audio('pikachufainting.wav');
+    var audioDiglett = new Audio('img/pikachufainting.wav');
     audioDiglett.play();
   }
   if (this.classList.contains('shinyDugtrio')) {
-    var audioDiglett = new Audio('dugtriosound.mp3');
+    var audioDiglett = new Audio('img/dugtriosound.mp3');
     audioDiglett.play();
   }
   if (this.classList.contains('alolanShinyDugtrio')) {
-    var audioDiglett = new Audio('dugtriosound.mp3');
+    var audioDiglett = new Audio('img/dugtriosound.mp3');
     audioDiglett.play();
   }
   if (this.classList.contains('shinyDiglett')) {
-    var audioDiglett = new Audio('diglettsound.mp3');
+    var audioDiglett = new Audio('img/diglettsound.mp3');
     audioDiglett.play();
   }
   if (this.classList.contains('alolanShinyDiglett')) {
-    var audioDiglett = new Audio('diglettsound.mp3');
+    var audioDiglett = new Audio('img/diglettsound.mp3');
     audioDiglett.play();
   }
   score += parseInt(this.dataset.increment);
@@ -295,7 +295,7 @@ function whack() {
 }
 
 function mallet() {
-  var audioMallet = new Audio('squeaky.mp3');
+  var audioMallet = new Audio('img/squeaky.mp3');
   audioMallet.play();
 }
 

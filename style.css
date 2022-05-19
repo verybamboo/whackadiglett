@@ -17,21 +17,24 @@ body{
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #3166ac;
   color: #f1c406;
-  height: 100%;
+  height: 100vh;
+  display: flex;
 }
 
 .wholeboard{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: center;
   cursor: url("img/picopico.cur"), auto;
+  height: 100vh;
+  width: 100;
 }
 
 .score, .highscore, .timer {
   display: inline-block;
   text-align: center;
-  float: left;
-  font-size: 30px;
+  font-size: 25px;
   color: #f1c406;
   text-shadow: 5px 5px #3166ac;
   -webkit-text-stroke-width: 3px;
@@ -39,14 +42,16 @@ body{
 }
 
 .scoresheet {
-  font-size: 30px;
+  font-size: 25px;
   color: #f1c406;
   text-shadow: 5px 5px #3166ac;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #3166ac;
   width: 10%;
-  height: 100%;
+  height: 90vh;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .dirt {
@@ -72,13 +77,29 @@ body{
 }
 
 .grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  width: 100%;
+}
+
+.grid-holder{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 50%;
+  font-size: 25px;
+  text-shadow: 2px 2px #3166ac;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3166ac;
+  color:#f1c406;
+  font-family: pokemon;
+  cursor: url("img/picopico.cur"), auto;
 }
 
 .row {
-  display: block;
-  float:left;
+  display: flex;
+  justify-content: center;
   width:100%;
 }
 
@@ -243,34 +264,36 @@ body{
 }
 
 .pics {
-  width: 50%;
-  height: 20%;
+  width: 5vw;
+  height: 5vh;
   display: inline-block;
   text-align: center;
   object-fit: contain;
 }
 
 .pics:hover {
-  transform: scale(1.5);
+  transform: scale(2.5);
 }
 
-ul{
-  list-style: none;
-  display: inline-block;
-  text-align: center;
-  height: 100%;
-  padding: 0;
+.scoreboard{
+  display: flex;
+  flex-direction: column;
+  width: 13%;
 }
 
 .points, .timer, .highscore {
   margin-right: -120px;
-  display: inline-block;
   text-align: center;
-  font-size: 28px;
   color: #f1c406;
   text-shadow: 5px 5px #3166ac;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #3166ac;
+  width: 100%;
+  font-size: 25px;
+}
+
+.points{
+  font-size: 20px;
 }
 
 .dirt:hover{
@@ -279,4 +302,15 @@ ul{
 
 .points {
   height: 40%;
+}
+
+@media (max-width: 380px){
+  .wholeboard{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .scoresheet{
+    font-size: 10px;
+  }
 }
