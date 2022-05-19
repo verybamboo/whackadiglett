@@ -304,7 +304,7 @@ body{
   height: 40%;
 }
 
-@media (max-width: 380px){
+@media (max-width: 400px){
   .wholeboard{
     width: 100vw;
     height: 100vh;
