@@ -83,12 +83,11 @@ body{
   width: 100%;
 }
 
-.grid-holder{
+.gridholder{
   display: flex;
   flex-direction: column;
-  float: left;
   width: 50%;
-  font-size: 25px;
+  font-size: 28px;
   text-shadow: 2px 2px #3166ac;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #3166ac;
