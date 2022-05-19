@@ -1,37 +1,36 @@
 //Make a 5x5 grid of boxes, each grid cell is a dirt div and within each dirt div is a diglett type div
 function makeGrid() {
   for (let i = 0; i < 5; i++) {
-    let row = document.createElement('div');
+    let row = document.createElement("div");
     row.className = "row";
     for (let j = 0; j < 5; j++) {
-      let dirt = document.createElement('div');
-      let diglettTypes = document.createElement('div');
+      let dirt = document.createElement("div");
+      let diglettTypes = document.createElement("div");
       dirt.className = "dirt";
-      diglettTypes.className = "digletts"
+      diglettTypes.className = "digletts";
       row.appendChild(dirt);
       dirt.appendChild(diglettTypes);
     }
-    document.querySelector('.grid').appendChild(row);
+    document.querySelector(".grid").appendChild(row);
   }
 }
 makeGrid();
 
 //stating the variables that will hold global values for use/access later
-let holes = document.querySelectorAll('.dirt');
-let digletts = document.querySelectorAll('.digletts');
-let scoreDisplay = document.querySelector('.score');
-let timerDisplay = document.querySelector('.timer');
-let highscoreDisplay = document.querySelector('.highscore');
+let holes = document.querySelectorAll(".dirt");
+let digletts = document.querySelectorAll(".digletts");
+let scoreDisplay = document.querySelector(".score");
+let timerDisplay = document.querySelector(".timer");
+let highscoreDisplay = document.querySelector(".highscore");
 let amtHoles = holes.length;
 let score = 0;
 let highscore = 0;
 let gamePlay = false;
 
-
 //combine random timer and toggle class to change dirt into digletts
 function setDiglett(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
 
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
@@ -40,22 +39,22 @@ function setDiglett(element) {
   }
 
   //puts the diglett at a random spot after checking that there aren't any other diglett type classes
-  digletts[randomSpot].classList.add('diglett');
+  digletts[randomSpot].classList.add("diglett");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.diglett');
+  var element = document.querySelector(".diglett");
   element.setAttribute("data-increment", 1);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('diglett');
+    digletts[randomSpot].classList.remove("diglett");
   }, setRandomTime(1000, 1500));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
 
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
@@ -63,22 +62,22 @@ function setDugtrio(element) {
     return time;
   }
 
-  digletts[randomSpot].classList.add('dugtrio');
+  digletts[randomSpot].classList.add("dugtrio");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.dugtrio');
+  var element = document.querySelector(".dugtrio");
   element.setAttribute("data-increment", 3);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('dugtrio');
+    digletts[randomSpot].classList.remove("dugtrio");
   }, setRandomTime(1000, 1400));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setShinyDiglett(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -86,22 +85,22 @@ function setShinyDiglett(element) {
   }
 
   //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
-  digletts[randomSpot].classList.add('shinyDiglett');
+  digletts[randomSpot].classList.add("shinyDiglett");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.shinyDiglett');
+  var element = document.querySelector(".shinyDiglett");
   element.setAttribute("data-increment", 2);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('shinyDiglett');
+    digletts[randomSpot].classList.remove("shinyDiglett");
   }, setRandomTime(1100, 1300));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setShinyDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -109,22 +108,22 @@ function setShinyDugtrio(element) {
   }
 
   //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
-  digletts[randomSpot].classList.add('shinyDugtrio');
+  digletts[randomSpot].classList.add("shinyDugtrio");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.shinyDugtrio');
+  var element = document.querySelector(".shinyDugtrio");
   element.setAttribute("data-increment", 6);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('shinyDugtrio');
+    digletts[randomSpot].classList.remove("shinyDugtrio");
   }, setRandomTime(1000, 1200));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setAlolanShinyDiglett(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -132,22 +131,22 @@ function setAlolanShinyDiglett(element) {
   }
 
   //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
-  digletts[randomSpot].classList.add('alolanShinyDiglett');
+  digletts[randomSpot].classList.add("alolanShinyDiglett");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.alolanShinyDiglett');
+  var element = document.querySelector(".alolanShinyDiglett");
   element.setAttribute("data-increment", 3);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('alolanShinyDiglett');
+    digletts[randomSpot].classList.remove("alolanShinyDiglett");
   }, setRandomTime(1000, 1100));
 }
 
 //In order to change the time intervals of each type of diglett/dugtrio, multiple functions had to be made
 function setAlolanShinyDugtrio(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -155,22 +154,22 @@ function setAlolanShinyDugtrio(element) {
   }
 
   //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
-  digletts[randomSpot].classList.add('alolanShinyDugtrio');
+  digletts[randomSpot].classList.add("alolanShinyDugtrio");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.alolanShinyDugtrio');
+  var element = document.querySelector(".alolanShinyDugtrio");
   element.setAttribute("data-increment", 9);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('alolanShinyDugtrio');
+    digletts[randomSpot].classList.remove("alolanShinyDugtrio");
   }, setRandomTime(700, 800));
 }
 
 //pikachus are worth negative point, avoid them
 function setPikachu(element) {
   //generate a random number called randomSpot to pass into holes as an index to access that specific div
-  let randomSpot = (Math.floor(Math.random() * amtHoles));
+  let randomSpot = Math.floor(Math.random() * amtHoles);
   //generate a random amount of time between minimum seconds and maximum seconds.
   function setRandomTime(minTime, maxTime) {
     let time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -178,21 +177,20 @@ function setPikachu(element) {
   }
 
   //puts the diglett at a random spot after checking that the spot doesn't contain any other diglett type classes
-  digletts[randomSpot].classList.add('pikachu');
+  digletts[randomSpot].classList.add("pikachu");
 
   //this diglett is worth a certain amount of points when whacked, the score is added to the dynamically created divs and also added to a total value
-  var element = document.querySelector('.pikachu');
+  var element = document.querySelector(".pikachu");
   element.setAttribute("data-increment", -5);
 
   //removes the diglett after a specified time
   setTimeout(() => {
-    digletts[randomSpot].classList.remove('pikachu');
+    digletts[randomSpot].classList.remove("pikachu");
   }, setRandomTime(1500, 2000));
 }
 
 //clears the intervals so the game can end after a set amount of time
-function clearSets(one, two, three, four, five, six, seven, eight
-) {
+function clearSets(one, two, three, four, five, six, seven, eight) {
   clearInterval(one);
   clearInterval(two);
   clearInterval(three);
@@ -214,14 +212,20 @@ function startGame() {
   }
 
   score = 0;
-  scoreDisplay.textContent = ("Score: " + score);
+  scoreDisplay.textContent = "Score: " + score;
   let intervalOne = setInterval(setDiglett, setRandomTime(1000, 1500));
   let intervalTwo = setInterval(setDugtrio, setRandomTime(2500, 3000));
   let intervalThree = setInterval(setPikachu, setRandomTime(3500, 4000));
   let intervalFour = setInterval(setShinyDiglett, setRandomTime(1500, 2000));
   let intervalFive = setInterval(setShinyDugtrio, setRandomTime(5500, 6000));
-  let intervalSix = setInterval(setAlolanShinyDiglett, setRandomTime(4500, 5000));
-  let intervalSeven = setInterval(setAlolanShinyDugtrio, setRandomTime(14500, 15000));
+  let intervalSix = setInterval(
+    setAlolanShinyDiglett,
+    setRandomTime(4500, 5000)
+  );
+  let intervalSeven = setInterval(
+    setAlolanShinyDugtrio,
+    setRandomTime(14500, 15000)
+  );
   let timerDown = setInterval(countDown, 1000);
 
   let timeleft = 60;
@@ -229,80 +233,88 @@ function startGame() {
   //display the time left on the screen
   function countDown() {
     timeleft--;
-    timerDisplay.textContent = ("Seconds:" + timeleft);
+    timerDisplay.textContent = "Seconds: " + timeleft;
   }
 
   //runs the game then clears all intervals when timer is up thus ending the game
   setTimeout(() => {
-    clearSets(intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, intervalSix, intervalSeven, timerDown);
+    clearSets(
+      intervalOne,
+      intervalTwo,
+      intervalThree,
+      intervalFour,
+      intervalFive,
+      intervalSix,
+      intervalSeven,
+      timerDown
+    );
   }, 60000);
 }
 
 //disable the startgame function button for the duration of the timer
 function disableButton() {
-  document.querySelector('.button').disabled = true;
+  document.querySelector(".button").disabled = true;
   setTimeout(function () {
-    document.querySelector('.button').disabled = false;
+    document.querySelector(".button").disabled = false;
   }, 60000);
 }
-document.querySelector('.button').addEventListener('click', disableButton);
+document.querySelector(".button").addEventListener("click", disableButton);
 
 //the whack function tracks the score by parsing the increment value that was added into the specific diglett class as a property
 //the increment value is added to score and the current score value is printed onto the screen
 //to prevent multiple clicks of the same diglett, once the click event happens, the class is removed
 function whack() {
-  if (this.classList.contains('diglett')) {
-    var audioDiglett = new Audio('img/diglettsound.mp3');
+  if (this.classList.contains("diglett")) {
+    var audioDiglett = new Audio("img/diglettsound.mp3");
     audioDiglett.play();
   }
-  if (this.classList.contains('dugtrio')) {
-    var audioDiglett = new Audio('img/dugtriosound.mp3');
+  if (this.classList.contains("dugtrio")) {
+    var audioDiglett = new Audio("img/dugtriosound.mp3");
     audioDiglett.play();
   }
-  if (this.classList.contains('pikachu')) {
-    var audioDiglett = new Audio('img/pikachufainting.wav');
+  if (this.classList.contains("pikachu")) {
+    var audioDiglett = new Audio("img/pikachufainting.wav");
     audioDiglett.play();
   }
-  if (this.classList.contains('shinyDugtrio')) {
-    var audioDiglett = new Audio('img/dugtriosound.mp3');
+  if (this.classList.contains("shinyDugtrio")) {
+    var audioDiglett = new Audio("img/dugtriosound.mp3");
     audioDiglett.play();
   }
-  if (this.classList.contains('alolanShinyDugtrio')) {
-    var audioDiglett = new Audio('img/dugtriosound.mp3');
+  if (this.classList.contains("alolanShinyDugtrio")) {
+    var audioDiglett = new Audio("img/dugtriosound.mp3");
     audioDiglett.play();
   }
-  if (this.classList.contains('shinyDiglett')) {
-    var audioDiglett = new Audio('img/diglettsound.mp3');
+  if (this.classList.contains("shinyDiglett")) {
+    var audioDiglett = new Audio("img/diglettsound.mp3");
     audioDiglett.play();
   }
-  if (this.classList.contains('alolanShinyDiglett')) {
-    var audioDiglett = new Audio('img/diglettsound.mp3');
+  if (this.classList.contains("alolanShinyDiglett")) {
+    var audioDiglett = new Audio("img/diglettsound.mp3");
     audioDiglett.play();
   }
   score += parseInt(this.dataset.increment);
-  this.classList.remove('diglett');
-  this.classList.remove('dugtrio');
-  this.classList.remove('shinyDiglett');
-  this.classList.remove('shinyDugtrio');
-  this.classList.remove('alolanShinyDiglett');
-  this.classList.remove('alolanShinyDugtrio');
-  this.classList.remove('pikachu');
-  scoreDisplay.textContent = ("Score: " + score);
+  this.classList.remove("diglett");
+  this.classList.remove("dugtrio");
+  this.classList.remove("shinyDiglett");
+  this.classList.remove("shinyDugtrio");
+  this.classList.remove("alolanShinyDiglett");
+  this.classList.remove("alolanShinyDugtrio");
+  this.classList.remove("pikachu");
+  scoreDisplay.textContent = "Score: " + score;
   if (score > highscore) {
     highscore = score;
-    highscoreDisplay.textContent = ("High Score: " + highscore);
+    highscoreDisplay.textContent = "High Score: " + highscore;
   }
 }
 
 function mallet() {
-  var audioMallet = new Audio('img/squeaky.mp3');
+  var audioMallet = new Audio("img/squeaky.mp3");
   audioMallet.play();
 }
 
 //On click event that will check the class of what was clicked and if it is a diglett type class then
 //turn a diglett / dugtrio back into a dirt class div while also keeping track of the score
-digletts.forEach(diglett => diglett.addEventListener('click', whack));
+digletts.forEach((diglett) => diglett.addEventListener("click", whack));
 
 //squeaky mallet just for some laughs
-holes.forEach(hole => hole.addEventListener('click', mallet));
-
+holes.forEach((hole) => hole.addEventListener("click", mallet));

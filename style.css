@@ -41,10 +41,6 @@ body{
   -webkit-text-stroke-color: #3166ac;
 }
 
-.scoresheet-holder{
-  width: 15%;
-}
-
 .scoresheet {
   font-size: 25px;
   color: #f1c406;
@@ -205,16 +201,6 @@ body{
   z-index: 1;
 }
 
-@keyframes pop-up2{
-  0%{
-    top: 20%;
-  }
-
-  20%{
-    top:10%;
-  }
-}
-
 @keyframes pop-up {
   0%{
     top: 100%;
@@ -315,15 +301,4 @@ body{
 
 .points {
   height: 40%;
-}
-
-@media (max-width: 380px){
-  .wholeboard{
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .diglett{
-    animation: pop-up2 .4s;
-  }
 }
