@@ -3,6 +3,7 @@ Project 4: Whack-A-Mole (Diglett)
 
 # Overview
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<img width="1178" alt="screenshotWAD" src="https://user-images.githubusercontent.com/57966235/159417760-b0d83ef7-e795-4a94-bbef-2a9828bc61b4.png">
 
 Simple game of whacking moles(digletts) using javascript, css and html that I've learned thus far.
 This is purely a project for practicing my own skills and not meant to be monetized or sold. 
@@ -55,6 +56,8 @@ I initially set out to create a simple 1 pop-up, mole game but eventually as I w
 1. CSS animations
 2. Custom cursors
 3. Custom Fonts
+4. HTML
+5. Javascript
 
 # Disclaimer
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
